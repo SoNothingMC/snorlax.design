@@ -1,34 +1,102 @@
 @import url('https://rsms.me/inter/inter.css');
 
-html {
+body {
+    background-color: #F2EADC;
+    margin: 0;
+    padding: 0;
     font-family: Inter, sans-serif;
     font-size: xx-large;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #F2EADC;
+    height: 100vh;
+}
 
 @media (prefers-color-scheme: dark) {
-    html {
+    body {
         background-color: #212121;
         color: #f4f4f4;
     }
+    h2 {
+        color: #525252 !important;
+    }
 }
 
-h1 {
-    animation: fade 1.2s ease-in-out
-    opacity: 0;
-    transform: scale(0.1)
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    animation: fadeIn 0.5s ease-in;
+    margin: 0 5%;
+    text-align: center;
 }
 
-@keyframes fade {
-    from {
-        transform: scale(0);
-        opacity: 0;
+h2 {
+    color: #828282;
+    font-size: large;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    main {
+        animation: none;
     }
-    to {
-        transform: scale(1);
-        opacity: 1
+    a:hover:before {
+        width: 0 !important;
     }
+    a:hover {
+        filter: opacity(0.8)
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    40% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+a {
+    color: #2195f2;
+    text-decoration: none;
+    position: relative;
+}
+
+a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    background-color: #2195f2;
+}
+
+a:hover:before {
+    visibility: visible;
+    width: 100%;
+}
+
+a:after {
+    content: "=>";
+    font-size: medium;
+    position: absolute;
+}
+
+h1 > a:after {
+    top: 1em;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    animation: fadeIn 1.5s ease-in;
+}
+
+
+footer > * > a:after {
+    top: -8px;
+    font-size: smaller !important;
+    right: -12px
 }
