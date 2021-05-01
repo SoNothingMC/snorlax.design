@@ -1,0 +1,15 @@
+@import url('https://rsms.me/inter/inter.css');
+html {
+    font-family: Inter, sans-serif;
+    font-size: xx-large;
+    background-color: #212121;
+    color: #f4f4f4;
+}
+body {
+    min-height: 100vh;
+}
+div.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
