@@ -79,10 +79,15 @@ a:after {
     content: "=>";
     font-size: medium;
     position: absolute;
+    transition: all 0.2s ease-in-out;
 }
 
 h1 > a:after {
     top: 1em;
+}
+
+a:hover:after {
+    transform: translateX(12px);
 }
 
 footer {
